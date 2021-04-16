@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Metadata -->
+	<title>{{pagetitle}}</title>
+
+	<!-- Import CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+  <!-- Compiled and minified CSS -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+
+    <nav class="nav-wrapper" id="home">
+        <a href="#!" class="brand-logo center">MyFishingBuddy</a>
+    </nav>
+    <div class="scrollmenu center">
+        <a href="#home">Homepage</a>
+        <a href="#features">Features</a>
+        <a href="#contact">About Us</a>
+        <a href="#about">Contact</a>
+        <a href="#tools">Blog</a>  
+        <a href="#">Register</a>
+        <a href="#blog">Log In</a>
+    </div>
+   
+
+    <main>
+        <div class="section">
+            <h1>Join Us!</h1>
+            <p>It's never too late!</p>
+        </div>
+        <div class="divider"></div>    
+    </main>
+
+</body>
+	<!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</html>
