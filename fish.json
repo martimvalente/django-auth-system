@@ -1,0 +1,20 @@
+{
+    "emp_details":[
+        {
+            "emp_name": "Martim Valente",
+            "email": "martimpvalente@gmail.com"
+        },
+        {
+            "emp_name": "Ana Elísia Pinho",
+            "email": "anapinho2323@gmail.com"
+        },
+        {
+            "emp_name": "João Oliveira",
+            "email": "joaooliv01@gmail.com"
+        },
+        {
+            "emp_name": "Diogo Lagoeiro",
+            "email": "diogolagoeiro@gmail.com"
+        }
+    ]
+}
