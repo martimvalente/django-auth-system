@@ -1,0 +1,22 @@
+<h3 class="login-heading mb-4">Bem-vindo de volta!</h3>
+<form method="post">
+    {% csrf_token %}
+    <div class="form-label-group">
+        <input name="username" value="{{form.username.value|default:''}}" type="text" id="inputEmail" class="form-control" placeholder="Utilizador" required autofocus>
+        <label for="inputEmail">Utilizador</label>
+    </div>
+    <div class="form-label-group">
+        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+        <label for="inputPassword">Senha</label>
+    </div>
+    <span class="text-center">
+        {% if form.errors %}
+            Dados Inválidos!
+        {% endif %}
+    </span>
+    <input type="submit" class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"/>
+    <a href="{% url 'register' %}" class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Registar</a>
+    <div class="text-center">
+        <a class="small" href="{% url 'password_reset' %}">Esqueceu a sua senha?</a>
+    </div>
+</form>
