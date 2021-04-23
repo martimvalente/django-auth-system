@@ -1,31 +1,9 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-	<!-- Metadata -->
-	<title>{{pagetitle}}</title>
 
-	<!-- Import CSS -->
-	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+  {% block content %}
 
-  <!-- Compiled and minified CSS -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-</head>
-<body>
-
-  <nav class="nav-wrapper" id="home">
-      <a href="#!" class="brand-logo center">MyFishingBuddy</a>
-  </nav>
-  <div class="scrollmenu center">
-    <a href="#home">Homepage</a>
-    <a href="#features">Features</a>
-    <a href="#contact">About Us</a>
-    <a href="#about">Contact</a>
-    <a href="#tools">Blog</a>  
-    <a href="#support">Register</a>
-    <a href="#blog">Log In</a>
-  </div>
+    {% include 'components/navbar.html' %}
 
 
     <div class="section no-pad-bot banner">
@@ -79,12 +57,4 @@
         </div>
       </div>  
     </main>
-
-    </div>
-    <br><br>
-  </div>
-
-</body>
-	<!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</html>
+  {% endblock %}

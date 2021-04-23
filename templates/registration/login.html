@@ -1,3 +1,10 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block content %}
+
+{% include "components/navbar.html" %}
+
 <h3 class="login-heading mb-4">Bem-vindo de volta!</h3>
 <form method="post">
     {% csrf_token %}
@@ -20,3 +27,5 @@
         <a class="small" href="{% url 'password_reset' %}">Esqueceu a sua senha?</a>
     </div>
 </form>
+
+{% endblock %}

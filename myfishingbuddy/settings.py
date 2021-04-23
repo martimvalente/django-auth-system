@@ -103,6 +103,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
+LOGIN_REDIRECT_URL = '/panel/'
+
+LOGOUT_REDIRECT_URL = '/'
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
