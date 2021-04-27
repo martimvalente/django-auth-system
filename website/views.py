@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
 
 def homepage(request):
@@ -21,6 +22,7 @@ def register(request):
         "form": form    
     })
 
+@login_required
 def panel(request):
 	pagedata = {
 	  "pagetitle": "My Panel"

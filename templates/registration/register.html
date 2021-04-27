@@ -1,47 +1,31 @@
-{% extends 'base.html' %}
-{% load static %}
 
-{% block content %}
+<form class="" method="POST">
+    {% csrf_token %}
 
-    <form class="" method="POST">
-        {% csrf_token %}
-        <div class=" ">
-            <div class="input-group-prepend">
-                <span class="input-group-text"><a><i class="fas fa-user"></i></a></span>
-            </div>
-            <input required autofocus class="form-control" type="text" name="username" value="{{form.username.value|default:''}}" class="form-control" aria-describedby="username" placeholder="Utilizador">
+    <input required autofocus class="form-control" type="text" name="username" value="{{form.username.value|default:''}}" aria-describedby="username" placeholder="Utilizador">
+
+    <input required class="form-control" type="password" name="password1" placeholder="Palavra-Passe">
+
+    <input required class="form-control" type="password" name="password2" placeholder="Confirmar palavra-passe">
+
+    <button type="submit" class="btn btn-primary">Registar</button>
+</form>
+
+{% if form.errors %}
+    <div role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="">Erro!</strong>
+            <small class="" id="toast_timer">agora</small>
         </div>
-        <div class="form-group input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text"><a><i class="fas fa-key"></i></a></span>
-            </div>
-            <input required class="form-control" type="password" name="password1" class="form-control" placeholder="Palavra-Passe">
+        <div class="toast-body">
+            {% for error in form.errors %}
+                {% if error == 'username' %}
+                    <a>O utilizador já existe!</a><br>
+                {% elif error == 'password2' %}
+                    <a>As palavra-passes introduzidas não são válidas!</a>
+                {% endif %}
+            {% endfor %}
         </div>
-        <div class="form-group input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text"><a><i class="fas fa-check"></i></a></span>
-            </div>
-            <input required class="form-control" type="password" name="password2" class="form-control" placeholder="Confirmar palavra-passe">
-        </div>
-        <button type="submit" class="btn btn-primary">Registar</button>
-    </form>
-    {% if form.errors %}
-        <div class="mt-3 toast bg-dark border-white w-100" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <strong class="me-auto">Erro!</strong>
-                <small class="text-muted pl-1" id="toast_timer">agora</small>
-            </div>
-            <div class="toast-body">
-                {% for error in form.errors %}
-                    {% if error == 'username' %}
-                        <a>O utilizador já existe!</a><br>
-                    {% elif error == 'password2' %}
-                        <a>As palavra-passes introduzidas não são válidas!</a>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-    {% endif %}
-    <p class="pt-3">Tem conta? Clique <a href="{% url 'login' %}">aqui</a> para iniciar sessão!</p>
-    
-{% endblock %}
+    </div>
+{% endif %}
+<p class="">Tem conta? Clique <a href="{% url 'login' %}">aqui</a> para iniciar sessão!</p>
